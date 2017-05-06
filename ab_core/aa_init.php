@@ -32,7 +32,7 @@
          spl_autoload_register(function($class)
                                 {
                                         
-                                    require_once 'aa_classes/'.$class.'.php';
+                                    require_once '../aa_classes/'.$class.'.php';
                                 }
           );
 
@@ -45,8 +45,8 @@
 
 
         
-        
-          require_once 'ac_functions/aa_sanitize.php';
+       //Require once and   require are different
+          require_once '../ac_functions/aa_sanitize.php';
 
 
 

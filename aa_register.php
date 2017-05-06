@@ -1,25 +1,25 @@
 <?php
 
- 
+
     $username  =  $_POST["name"];
     $email     =  $_POST["email"];
     $password  =  $_POST["password"]; 
     $mobno     =  intval($_POST["mobno"]) ; 
     $place     =  $_POST["place"] ; 
-    $user_mode =  $_POST["user_mode"] ;   
+    $user_mode =  $_POST["user_mode"] ;  
 
     
- /*
+  /*
     $username = "mathew";
     $email ="johns@gmaild.com";
     $password = "helloword"; 
     $mobno =  89765 ; 
     $place =  "mananthavady" ; 
-    $user_mode = "vendor"; */
+    $user_mode = "vendor";  */
 
  
     require_once 'ab_core/aa_init.php';
-    $return_obj= ac_DB::getInstance()->query("SELECT email,username FROM ab_users WHERE email=?",array($email));
+    $return_obj= ac_DB::getInstance()->query("SELECT email,username FROM ab_users WHERE email=? or mobno=?",array($email,$mobno));
  
 
      if(!$return_obj->Count())
